@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Widget</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="widget">
+        <div class="calendar">
+            <div class="calendar-header">
+                <button>&lt;</button>
+                <span>Jul</span>
+                <button>&gt;</button>
+            </div>
+            <div class="calendar-body">
+                <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+                <div>21</div><div>22</div><div>23</div><div class="today">24</div><div>25</div><div>26</div><div>27</div>
+            </div>
+        </div>
+        <div class="screen-time">
+            <h2>Screen time</h2>
+            <div>20m</div>
+            <div>
+                <div>ChatGPT</div><div>12m</div>
+            </div>
+            <div>
+                <div>Spck Ed...</div><div>3m</div>
+            </div>
+            <div>
+                <div>Chrome</div><div>1m</div>
+            </div>
+        </div>
+        <div class="pomodoro">
+            <h2>Today: 0m</h2>
+            <button>Start</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(function() { console.log('Service Worker Registered'); });
+        }
+    </script>
+</body>
+</html>
